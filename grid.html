@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <style>
+        .container{
+            width: 80%;
+            margin: 50px auto;
+            background-color: gray;
+
+            display: grid;
+
+            grid-template-columns: 1fr 4fr;
+            grid-template-rows: 100px 400px 100px;
+
+            gap: 10px;
+        }
+
+        .item{
+            background-color: orangered;
+
+        }
+
+        .item1, .footer{
+            grid-column: span 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item item1">Header</div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item footer">Abolfazl Farokhru</div>
+    </div>
+</body>
+</html>

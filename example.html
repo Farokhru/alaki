@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: grid;
+
+            grid-template-columns: 1fr 5fr 1fr;
+            grid-template-rows: 1fr 8fr 1fr;
+
+            grid-template-areas: 'Header  Header   Header'
+                'Side-L  Main     Side-R'
+                'Footer  Footer   Footer'
+        }
+
+        header {
+            background-color: orangered;
+            grid-area: Header;
+        }
+
+        aside {
+            background-color: aqua;
+
+        }
+
+        .Left {
+            grid-area: Side-L;
+        }
+
+        .Right {
+            grid-area: Side-R;
+            background-color: yellow !important;
+        }
+
+        main {
+            background-color: purple;
+            grid-area: Main;
+        }
+
+        footer {
+            background-color: crimson;
+            grid-area: Footer;
+        }
+
+        @media (max-width:700px) {
+            body {
+                gap: 10px;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: 1fr 2fr 8fr 1fr;
+
+                grid-template-areas: 'Header    Header'
+                                     'Side-L    Side-R'
+                                     'Main      Main'
+                                     'Footer    Footer'
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header></header>
+    <aside class="Left"></aside>
+    <main></main>
+    <aside class="Right"></aside>
+    <footer></footer>
+</body>
+
+</html>
